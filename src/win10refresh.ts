@@ -299,6 +299,8 @@ export default function win10refresh(
 		}
 	})
 
+	/*
+	Note(ibrahim): this is disabled because it causes lag when window reszing. We will want the custom move logic, though.
 	win.on('will-resize', (e, newBounds) => {
 		if (
 			lastWillResizeBounds !== undefined &&
@@ -334,6 +336,7 @@ export default function win10refresh(
 		resizeLastUpdate = process.hrtime.bigint()
 		boundsPromise = boundsPromise.then(doFollowUpQueryIfNecessary)
 	})
+	*/
 
 	// Close the VerticalRefreshRateContext so Node can exit cleanly
 	win.on('closed', refreshCtx.close)
